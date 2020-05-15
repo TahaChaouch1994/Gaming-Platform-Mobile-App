@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:geeks_overflow/entities/ForumCategory.dart';
+import 'package:geeks_overflow/services/ForumService.dart';
 import 'package:geeks_overflow/views/cart/cart.dart';
+import 'package:geeks_overflow/views/forum/ListSubreddits.dart';
 import 'package:geeks_overflow/views/home/firstpage.dart';
 import 'package:geeks_overflow/views/login/welcomePage.dart';
 import 'package:geeks_overflow/views/profile/info.dart';
 import 'package:geeks_overflow/views/profile/profile.dart';
 import 'package:geeks_overflow/views/tournament/mytournaments.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:http/http.dart' as http;
 class Choice {
   Choice(this.title, this.icon);
 
@@ -31,15 +34,23 @@ class _HomeScreenState extends State<HomeScreen>
   int _selectedIndex = 0;
   Choice _selectedChoice = choices[0];
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static  List<Widget> _widgetOptions = <Widget>[
     /*Text(
       'Index 0: Home',
       style: optionStyle,
     ),*/
     const FirstPageScreen(),
-    Text(
-      'Index 1: Forums',
-      style: optionStyle,
+
+    new FutureBuilder<List<ForumCategory>>(
+      future: fetchCountry(new http.Client()),
+      builder: (context, snapshot) {
+        print("hi");
+        if (snapshot.hasError) print(snapshot.error);
+
+        return snapshot.hasData
+            ? new CountyGridView(country: snapshot.data)
+            : new Center(child: new CircularProgressIndicator());
+      },
     ),
     const InfoScreen(),
     const MyTournament(),

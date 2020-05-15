@@ -43,7 +43,12 @@ dependencies:
   tuple: ^1.0.3
   encrypt: ^4.0.0
   flappy_search_bar: ^1.7.2
-
+  grouped_list: ^2.3.0
+  dynamic_list_view: ^0.1.5
+  font_awesome_flutter: ^8.2.0
+  dio: ^1.0.13
+  image_picker: any
+  mime: 0.9.6+3
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -58,7 +63,19 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+  - assets/food.png
+  - assets/map.png
+  - assets/setting.png
+  - assets/todo.png
+  - assets/dota.png
+  - assets/fortnite.png
+  - assets/game_plays.png
+  - assets/hardware.png
+  - assets/lol.png
+  - assets/news.png
+  - assets/off_gaming.png
+  - assets/software.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
