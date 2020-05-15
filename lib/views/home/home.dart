@@ -4,6 +4,7 @@ import 'package:geeks_overflow/views/home/firstpage.dart';
 import 'package:geeks_overflow/views/login/welcomePage.dart';
 import 'package:geeks_overflow/views/profile/info.dart';
 import 'package:geeks_overflow/views/profile/profile.dart';
+import 'package:geeks_overflow/views/tournament/mytournaments.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Choice {
@@ -41,6 +42,8 @@ class _HomeScreenState extends State<HomeScreen>
       style: optionStyle,
     ),
     const InfoScreen(),
+    const MyTournament(),
+
   ];
 
   void _onItemTapped(int index) {
@@ -110,6 +113,7 @@ class _HomeScreenState extends State<HomeScreen>
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -123,11 +127,17 @@ class _HomeScreenState extends State<HomeScreen>
             icon: Icon(Icons.school),
             title: Text('Profile'),
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            title: Text('Tournament'),
+          ),
         ],
+
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
         onTap: _onItemTapped,
       ),
+
     );
   }
 }

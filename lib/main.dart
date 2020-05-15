@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:geeks_overflow/views/login/welcomePage.dart';
+import 'package:geeks_overflow/views/home/home.dart';
+import 'package:geeks_overflow/views/tournament/brackettournament.dart';
+import 'package:geeks_overflow/views/tournament/myaccepted.dart';
+import 'package:geeks_overflow/views/tournament/myaccepteddetail.dart';
+import 'package:geeks_overflow/views/tournament/tournamentdetail.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyApp(
+
+));
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -11,7 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+
     return MaterialApp(
+
       title: 'GeeksOverFlow',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -19,8 +27,17 @@ class MyApp extends StatelessWidget {
           body1: GoogleFonts.montserrat(textStyle: textTheme.bodyText2),
         ),
       ),
+
       debugShowCheckedModeBanner: false,
-      home: WelcomePage(),
+      home: HomeScreen(),
+
+      routes: {
+        '/tournamentdetail': (context) => Tournamentdetail(),
+        '/myaccepted': (context) => MyAccepted(),
+        '/myaccepteddetail': (context) => MyAcceptedDetail(),
+        '/bracket': (context) => bracketTournament(),
+      },
     );
+
   }
 }
