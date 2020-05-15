@@ -3,6 +3,7 @@ import 'package:geeks_overflow/entities/ForumCategory.dart';
 import 'package:geeks_overflow/entities/Thread.dart';
 import 'package:geeks_overflow/entities/User.dart';
 import 'package:geeks_overflow/views/forum/ListThreadsanddetail/AddThread.dart';
+import 'package:geeks_overflow/views/var.dart';
 
 
 
@@ -42,7 +43,7 @@ class BookDashboard extends StatelessWidget {
 
   Future<List<Thread>> _bookDetails() async {
     List<Thread> bookdetails = [];
-    var data =await http.get("http://192.168.1.4:1337/thread/get?id="+subea.id);
+    var data =await http.get(Var.link+"/thread/get?id="+subea.id);
     var jsonData = json.decode(data.body);
     print(jsonData);
     for (var bookval in jsonData) {

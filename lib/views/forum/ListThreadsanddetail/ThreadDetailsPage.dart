@@ -3,6 +3,7 @@ import 'package:geeks_overflow/entities/ForumUser.dart';
 import 'package:geeks_overflow/entities/Replys.dart';
 import 'package:geeks_overflow/entities/Thread.dart';
 import 'package:geeks_overflow/entities/User.dart';
+import 'package:geeks_overflow/views/var.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -40,7 +41,7 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
 
 
 
-  static final String addreply = 'http://192.168.1.4:1337/reply/add';
+  static final String addreply = Var.link+"/reply/add";
 
 
 
@@ -70,7 +71,7 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
   Future<List<Replys>> _replys() async {
 
     List<Replys> bookdetails = [];
-    var data =await http.get("http://192.168.1.4:1337/replys/get?id="+widget.books.id);
+    var data =await http.get(Var.link+"/replys/get?id="+widget.books.id);
     var jsonData = json.decode(data.body);
     for (var bookval in jsonData) {
       var id = bookval['_id'];
@@ -365,7 +366,7 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
                           contentPadding: EdgeInsets.only(right: 8),
                           leading: CircleAvatar(
                             backgroundColor: Colors.grey,
-                            backgroundImage: new NetworkImage("http://192.168.1.4:1337/avatars/"+p.senderid+".jpg"),
+                            backgroundImage: new NetworkImage(Var.link+"/avatars/"+p.senderid+".jpg"),
                           ),
                           title: RichText(
                             text: new TextSpan(
@@ -448,7 +449,7 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
                     borderRadius: BorderRadius.circular(5),
                     image: DecorationImage(
                       fit: BoxFit.fill,
-                      image: NetworkImage("http://192.168.1.4:1337/thread_attachements/"+widget.books.id+".jpg"),
+                      image: NetworkImage(Var.link+"/thread_attachements/"+widget.books.id+".jpg"),
                     ),
                   ),
                 ),
@@ -481,7 +482,7 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
                                 leading: CircleAvatar(
                                   backgroundColor: Colors.grey,
 
-                                  backgroundImage: new NetworkImage("http://192.168.1.4:1337/avatars/"+widget.books.senderid+".jpg"),
+                                  backgroundImage: new NetworkImage(Var.link+"/avatars/"+widget.books.senderid+".jpg"),
                                 ),
                                 title: RichText(
                                   text: new TextSpan(

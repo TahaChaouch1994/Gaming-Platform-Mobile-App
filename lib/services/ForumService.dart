@@ -5,12 +5,13 @@ import 'package:flutter/foundation.dart';
 import 'package:geeks_overflow/entities/ForumCategory.dart';
 import 'package:geeks_overflow/entities/Replys.dart';
 import 'package:geeks_overflow/entities/Thread.dart';
+import 'package:geeks_overflow/views/var.dart';
 
 import 'package:http/http.dart' as http;
 
 
 Future<List<ForumCategory>> fetchCountry(http.Client client) async {
-  final response = await client.get('http://192.168.1.4:1337/forum/categories');
+  final response = await client.get(Var.link+"/forum/categories");
   // Use the compute function to run parsePhotos in a separate isolate
 
   var  jsonData = json.decode(response.body);
@@ -58,7 +59,7 @@ List<ForumCategory> parseData(String responseBody) {
 
 
 Future<List<Thread>> _bookDetails(id) async {
-  var data =await http.get("http://192.168.1.4:1337/thread/get?id="+id);
+  var data =await http.get(Var.link+"/thread/get?id="+id);
   var jsonData = json.decode(data.body);
   List<Thread> bookdetails = [];
   print(jsonData);
@@ -91,7 +92,7 @@ Future<List<Thread>> _bookDetails(id) async {
 
 Future<List<Replys>> _replys(id) async {
   List<Replys> bookdetails = [];
-  var data =await http.get("http://192.168.1.4:1337/replys/get?id="+id);
+  var data =await http.get(Var.link+"/replys/get?id="+id);
   var jsonData = json.decode(data.body);
   for (var bookval in jsonData) {
     var id = bookval['_id'];

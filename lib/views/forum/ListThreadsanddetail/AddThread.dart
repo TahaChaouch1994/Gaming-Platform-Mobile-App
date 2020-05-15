@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:geeks_overflow/entities/ForumCategory.dart';
 import 'package:geeks_overflow/entities/ForumUser.dart';
 import 'package:geeks_overflow/entities/User.dart';
+import 'package:geeks_overflow/views/var.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -54,9 +55,9 @@ class UploadImageDemoState extends State<UploadImageDemo> {
   final descc = TextEditingController();
   String ppp ;
   static final String uploadEndPoint =
-      'http://192.168.1.4:1337/thread/uploadattachement';
+      Var.link+":1337/thread/uploadattachement";
   static final String addthread =
-      'http://192.168.1.4:1337/thread/add';
+      Var.link+"/thread/add";
   Future<File> file;
   String status = '';
   String base64Image;

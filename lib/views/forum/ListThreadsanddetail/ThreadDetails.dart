@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geeks_overflow/entities/Thread.dart';
+import 'package:geeks_overflow/views/var.dart';
 
 
 import 'ThreadDetailsPage.dart';
@@ -33,7 +34,7 @@ BookDetails(this.index,this.bookname,this.bookauthor,this.bookrating,this.bookvi
           borderRadius: BorderRadius.circular(24.0),
           image: DecorationImage(
 
-            image: new NetworkImage("http://192.168.1.4:1337/thread_attachements/"+index.id+".jpg"
+            image: new NetworkImage(Var.link+"/thread_attachements/"+index.id+".jpg"
           ),
             fit: BoxFit.fill,
           ),
