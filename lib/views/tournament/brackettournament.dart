@@ -70,11 +70,11 @@ class _bracketTournamentState extends State<bracketTournament> {
 
     return Scaffold(
       backgroundColor:  Color.fromRGBO(50, 60, 80, 1.0),
-      appBar: AppBar(
+   /*   appBar: AppBar(
         title: Text('Tournament Bracket'),
         centerTitle: true,
         backgroundColor:  Color.fromRGBO(58, 66, 86, 1.0),
-      ),
+      ), */
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0),
 

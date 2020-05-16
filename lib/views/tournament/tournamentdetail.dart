@@ -84,12 +84,12 @@ class _TournamentdetailState extends State<Tournamentdetail> {
 
     return Scaffold(
       backgroundColor:  Color.fromRGBO(50, 60, 80, 1.0),
-      appBar: AppBar(
+  /*    appBar: AppBar(
         title: Text(data['tournament']['tournamentname']),
         centerTitle: true,
         backgroundColor:  Color.fromRGBO(58, 66, 86, 1.0),
-      ),
-      bottomNavigationBar: makeBottom(context),
+      ), */
+     // bottomNavigationBar: makeBottom(context),
       body:
       SingleChildScrollView(
 
