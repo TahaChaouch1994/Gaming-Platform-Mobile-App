@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geeks_overflow/views/var.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 
@@ -65,7 +66,7 @@ Widget makeBottom(context) {
 
 Future getData2() async {
 
-  Response response2 = await get('http://10.0.2.2:3005/tournament/getBracketPlayers/'+ data['tournament']['newtournament'][0]['_id']);
+  Response response2 = await get(Var.link+'/tournament/getBracketPlayers/'+ data['tournament']['newtournament'][0]['_id']);
   tournaments2 = jsonDecode(response2.body) ;
 }
 

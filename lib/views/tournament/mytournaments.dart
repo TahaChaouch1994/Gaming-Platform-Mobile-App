@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geeks_overflow/views/tournament/myaccepteddetail.dart';
+import 'package:geeks_overflow/views/var.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 
@@ -32,7 +33,7 @@ class _MyTournamentState extends State<MyTournament> {
   int tester= 0;
 
   Future getData() async {
-    Response response = await get('http://10.0.2.2:3005/tournament/mytournaments/$iduser');
+    Response response = await get(Var.link+'/tournament/mytournaments/$iduser');
     tournaments = jsonDecode(response.body) ;
     print(tournaments.length);
     getData2();
@@ -43,13 +44,13 @@ class _MyTournamentState extends State<MyTournament> {
 
   Future getData2() async {
 
-    Response response2 = await get('http://10.0.2.2:3005/tournament/newtournament/$iduser');
+    Response response2 = await get(Var.link+'/tournament/newtournament/$iduser');
     tournaments2 = jsonDecode(response2.body) ;
   }
 
 
   Future JoinTournament(code) async {
-    Response response3 = await get('http://10.0.2.2:3005/tournament/gettournamentbycode/$code');
+    Response response3 = await get(Var.link+'/tournament/gettournamentbycode/$code');
     test3=jsonDecode(response3.body) ;
 
     if(test3.length >0 )

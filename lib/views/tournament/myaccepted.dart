@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geeks_overflow/views/var.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 
@@ -62,7 +63,7 @@ class _MyAcceptedState extends State<MyAccepted> {
 
 
   Future getData() async {
-    Response response = await get('http://10.0.2.2:3005/tournament/numberofplacesroomtournament/'+ data['tournament']['tournamentname']);
+    Response response = await get(Var.link+'/tournament/numberofplacesroomtournament/'+ data['tournament']['tournamentname']);
     numberx = jsonDecode(response.body) ;
 
     if(data['tournament']['createtype'] == "spectator")
@@ -77,7 +78,7 @@ class _MyAcceptedState extends State<MyAccepted> {
 
 
   Future JoinTournament() async {
-    Response response3 = await get('http://10.0.2.2:3005/tournament/jointournament/$iduser/$tournamentname');
+    Response response3 = await get(Var.link+'/tournament/jointournament/$iduser/$tournamentname');
     test3=jsonDecode(response3.body) ;
 
     await PayTournament();
@@ -85,12 +86,12 @@ class _MyAcceptedState extends State<MyAccepted> {
   }
 
   Future PayTournament() async {
-    Response response4 = await get('http://10.0.2.2:3005/transaction/$firstpublickey/$firstprivatekey/$secondpublickey/'+data['tournament']['entryfee']);
+    Response response4 = await get(Var.link+'/transaction/$firstpublickey/$firstprivatekey/$secondpublickey/'+data['tournament']['entryfee']);
   }
 
 
   Future CheckJoined() async {
-    Response response4 = await get('http://10.0.2.2:3005/tournament/checkjoined/$tournamentname/$iduser');
+    Response response4 = await get(Var.link+'/tournament/checkjoined/$tournamentname/$iduser');
     test4=jsonDecode(response4.body) ;
     print( "check joined : " + test4.toString());
 

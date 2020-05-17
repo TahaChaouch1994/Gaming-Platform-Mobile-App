@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geeks_overflow/views/home/home.dart';
 import 'package:geeks_overflow/views/login/loginPage.dart';
+import 'package:geeks_overflow/views/login/welcomePage.dart';
 import 'package:geeks_overflow/views/tournament/brackettournament.dart';
 import 'package:geeks_overflow/views/tournament/myaccepted.dart';
 import 'package:geeks_overflow/views/tournament/myaccepteddetail.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       ),
 
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: WelcomePage(),
 
       routes: {
         '/tournamentdetail': (context) => Tournamentdetail(),

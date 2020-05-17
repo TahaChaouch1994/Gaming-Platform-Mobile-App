@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geeks_overflow/views/var.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 
@@ -56,7 +57,7 @@ class _TournamentdetailState extends State<Tournamentdetail> {
 
 
   Future getData() async {
-    Response response = await get('http://10.0.2.2:3005/tournament/numberofplacesroomtournament/'+ data['tournament']['tournamentname']);
+    Response response = await get(Var.link+"/tournament/numberofplacesroomtournament/'+ data['tournament']['tournamentname']");
     numberx = jsonDecode(response.body) ;
 
     if(data['tournament']['createtype'] == "spectator")
