@@ -256,10 +256,10 @@ class _MovieScreenState extends State<MovieScreen> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network('https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4')
+    _controller = VideoPlayerController.network('https://www.youtube.com/embed/ocp5THf5K98')
       ..initialize().then((_) {});
     _videoPlayerController1 = VideoPlayerController.network(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
+        'https://www.youtube.com/embed/ocp5THf5K98');
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController1,
       aspectRatio: 3 / 2,
@@ -305,7 +305,7 @@ class _MovieScreenState extends State<MovieScreen> {
                     setState(() {
                       _controller.pause();
                       _controller = VideoPlayerController.network(
-                        'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4')
+                        'https://youtu.be/99ABaee58Ow')
                         ..initialize().then((_) {});
                     });
                   },

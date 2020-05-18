@@ -23,7 +23,7 @@ class stream {
 final List<stream> movies = [
   stream(
     imageUrl: 'assets/images/spiderman_0.jpg',
-    title: 'Spider-Man: Far From Home',
+    title: 'league of legends',
     categories: 'Fantasy, Sci-fi',
     year: 2018,
     country: 'USA',
@@ -38,7 +38,7 @@ final List<stream> movies = [
   ),
   stream(
     imageUrl: 'assets/images/nutcracker.jpg',
-    title: 'The Nutcracker And The Four Realms',
+    title: 'fortnite',
     categories: 'Adventure, Family, Fantasy',
     year: 2018,
     country: 'USA',
@@ -53,8 +53,8 @@ final List<stream> movies = [
   ),
   stream(
     imageUrl: 'assets/images/toystory.jpg',
-    title: 'Toy Story 4',
-    categories: 'Adventure, Fantasy',
+    title: 'counter strike go',
+    categories: 'counter strike go',
     year: 2019,
     country: 'USA',
     length: 100,
@@ -70,7 +70,6 @@ final List<stream> movies = [
 
 final List<String> labels = [
   'favorites',
-  'Forums',
   'Friends',
   'New',
 ];

@@ -25,7 +25,7 @@ class _HomeScreenState extends State<streamScreen> {
     super.initState();
     _pageController = PageController(initialPage: 1, viewportFraction: 0.8);
     _videoPlayerController1 = VideoPlayerController.network(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
+        'https://www.youtube.com/embed/ocp5THf5K98');
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController1,
       aspectRatio: 3 / 2,
@@ -202,17 +202,6 @@ class _HomeScreenState extends State<streamScreen> {
       ),
       body:
       Stack(children: <Widget>[
-        Positioned(
-          //top: 100,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          child: Container(
-            height: 100,
-            color: Colors.black,
-            child: minivideo(),
-          ),
-        ),
       ListView(
         children:<Widget>[
           Container(
