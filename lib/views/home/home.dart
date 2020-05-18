@@ -4,6 +4,7 @@ import 'package:geeks_overflow/services/ForumService.dart';
 import 'package:geeks_overflow/views/cart/cart.dart';
 import 'package:geeks_overflow/views/forum/ListSubreddits.dart';
 import 'package:geeks_overflow/views/home/firstpage.dart';
+import 'package:geeks_overflow/views/home_screen.dart';
 import 'package:geeks_overflow/views/login/welcomePage.dart';
 import 'package:geeks_overflow/views/profile/info.dart';
 import 'package:geeks_overflow/views/profile/profile.dart';
@@ -54,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen>
     ),
     const InfoScreen(),
     const MyTournament(),
+    streamScreen(),
 
   ];
 
@@ -141,6 +143,10 @@ class _HomeScreenState extends State<HomeScreen>
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
             title: Text('Tournament'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.missed_video_call),
+            title: Text('Stream'),
           ),
         ],
 

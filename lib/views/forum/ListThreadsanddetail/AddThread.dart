@@ -55,7 +55,7 @@ class UploadImageDemoState extends State<UploadImageDemo> {
   final descc = TextEditingController();
   String ppp ;
   static final String uploadEndPoint =
-      Var.link+":1337/thread/uploadattachement";
+      Var.link+"/thread/uploadattachement";
   static final String addthread =
       Var.link+"/thread/add";
   Future<File> file;
